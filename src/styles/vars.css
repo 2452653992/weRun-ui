@@ -1,0 +1,99 @@
+:root {
+  /* colors */
+  --wr-color-white: #ffffff;
+  --wr-color-black: #000000;
+  /* 主色 */
+  --wr-color-primary: #409eff;
+  --wr-color-primary-dark-2: #337ecc;
+  --wr-color-primary-light-3: #79bbff;
+  --wr-color-primary-light-5: #a0cfff;
+  --wr-color-primary-light-7: #c6e2ff;
+  --wr-color-primary-light-8: #d9ecff;
+  --wr-color-primary-light-9: #ecf5ff;
+  /* 成功 */
+  --wr-color-success: #67c23a;
+  --wr-color-success-dark-2: #529b2e;
+  --wr-color-success-light-3: #95d475;
+  --wr-color-success-light-5: #b3e19d;
+  --wr-color-success-light-7: #d1edc4;
+  --wr-color-success-light-8: #e1f3d8;
+  --wr-color-success-light-9: #f0f9eb;
+  /* 警告 */
+  --wr-color-warning: #e6a23c;
+  --wr-color-warning-dark-2: #b88230;
+  --wr-color-warning-light-3: #eebe77;
+  --wr-color-warning-light-5: #f3d19e;
+  --wr-color-warning-light-7: #f8e3c5;
+  --wr-color-warning-light-8: #faecd8;
+  --wr-color-warning-light-9: #fdf6ec;
+  /* 危险 */
+  --wr-color-danger: #f56c6c;
+  --wr-color-danger-dark-2: #c45656;
+  --wr-color-danger-light-3: #f89898;
+  --wr-color-danger-light-5: #fab6b6;
+  --wr-color-danger-light-7: #fcd3d3;
+  --wr-color-danger-light-8: #fde2e2;
+  --wr-color-danger-light-9: #fef0f0;
+  /* 信息 */
+  --wr-color-info: #909399;
+  --wr-color-info-dark-2: #73767a;
+  --wr-color-info-light-3: #b1b3b8;
+  --wr-color-info-light-5: #c8c9cc;
+  --wr-color-info-light-7: #dedfe0;
+  --wr-color-info-light-8: #e9e9eb;
+  --wr-color-info-light-9: #f4f4f5;
+
+  --wr-bg-color: #ffffff;
+  --wr-bg-color-page: #f2f3f5;
+  --wr-bg-color-overlay: #ffffff;
+  --wr-text-color-primary: #303133;
+  --wr-text-color-regular: #606266;
+  --wr-text-color-secondary: #909399;
+  --wr-text-color-placeholder: #a8abb2;
+  --wr-text-color-disabled: #c0c4cc;
+  --wr-border-color: #dcdfe6;
+  --wr-border-color-light: #e4e7ed;
+  --wr-border-color-lighter: #ebeef5;
+  --wr-border-color-extra-light: #f2f6fc;
+  --wr-border-color-dark: #d4d7de;
+  --wr-border-color-darker: #cdd0d6;
+  --wr-fill-color: #f0f2f5;
+  --wr-fill-color-light: #f5f7fa;
+  --wr-fill-color-lighter: #fafafa;
+  --wr-fill-color-extra-light: #fafcff;
+  --wr-fill-color-dark: #ebedf0;
+  --wr-fill-color-darker: #e6e8eb;
+  --wr-fill-color-blank: #ffffff;
+
+  /* border */
+  --wr-border-width: 1px;
+  --wr-border-style: solid;
+  --wr-border-color-hover: var(--wr-text-color-disabled);
+  --wr-border: var(--wr-border-width) var(--wr-border-style)
+    var(--wr-border-color);
+  --wr-border-radius-base: 4px;
+  --wr-border-radius-small: 2px;
+  --wr-border-radius-round: 20px;
+  --wr-border-radius-circle: 100%;
+
+  /*font*/
+  --wr-font-size-extra-large: 20px;
+  --wr-font-size-large: 18px;
+  --wr-font-size-medium: 16px;
+  --wr-font-size-base: 14px;
+  --wr-font-size-small: 13px;
+  --wr-font-size-extra-small: 12px;
+  --wr-font-family: "Helvetica Neue", Helvetica, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", Arial,
+    sans-serif;
+  --wr-font-weight-primary: 500;
+
+  /*disabled*/
+  --wr-disabled-bg-color: var(--wr-fill-color-light);
+  --wr-disabled-text-color: var(--wr-text-color-placeholder);
+  --wr-disabled-border-color: var(--wr-border-color-light);
+
+  /*animation*/
+  --wr-transition-duration: 0.3s;
+  --wr-transition-duration-fast: 0.2s;
+}

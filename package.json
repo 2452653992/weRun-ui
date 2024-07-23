@@ -4,18 +4,30 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "npx vitest example"
   },
   "dependencies": {
+    "@floating-ui/vue": "^1.1.2",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
+    "@vitejs/plugin-vue-jsx": "^4.0.0",
+    "axios": "^1.7.2",
+    "lodash-es": "^4.17.21",
     "vue": "^3.4.21"
   },
   "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
     "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^24.1.0",
     "sass": "^1.77.2",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
+    "vitest": "^2.0.2",
     "vue-tsc": "^2.0.6"
   }
 }
