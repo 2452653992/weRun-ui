@@ -3,7 +3,9 @@ import { ref, onMounted, h } from "vue";
 import Button from "./components/Button/Button.vue";
 import Tooltip from "./components/Tooltip/Tooltip.vue";
 import type { TooltipInstance } from "./components/Tooltip/types";
+import Message from "./components/Message/Message.vue";
 import Dropdown from "./components/Dropdown/Dropdown.vue";
+import { createMesssage } from "./components/Message/method";
 import type { MenuOption } from "./components/Dropdown/types";
 const TooltipRef = ref<TooltipInstance | null>(null);
 const openedValue = ref(["a"]);
@@ -23,6 +25,23 @@ const options: MenuOption[] = [
   { key: 4, label: "item4" },
 ];
 onMounted(() => {
+  createMesssage({
+    message: "hello message",
+    duration: 0,
+    showClose: true,
+  });
+  createMesssage({
+    message: "hello message again",
+    showClose: true,
+  });
+  createMesssage({
+    message: "hello message again",
+    showClose: true,
+  });
+  createMesssage({
+    message: "hello message again",
+    showClose: true,
+  });
   setTimeout(() => {
     openedValue.value.push("b");
     placement.value = "bottom";
@@ -70,7 +89,7 @@ onMounted(() => {
     <Alert type="warning">
       <h1>111</h1>
     </Alert> -->
-    <Button @click="open" type="danger" size="large">测试ICON</Button>
+    <!-- <Button @click="open" type="danger" size="large">测试ICON</Button>
     <Button @click="close" type="info" size="large">测试ICON</Button>
     <br />
     下面是toolip
@@ -88,7 +107,7 @@ onMounted(() => {
       <template #content>
         <h1>hhhh</h1>
       </template>
-    </Dropdown>
+    </Dropdown> -->
   </div>
 </template>
 
