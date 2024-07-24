@@ -27,7 +27,9 @@ const popperNode = ref<HTMLElement>();
 const triggerNode = ref<HTMLElement>();
 const popperContainerNode = ref<HTMLElement>();
 const floatingArrow = ref<HTMLElement>();
-
+defineOptions({
+  name: "WrTooltip",
+});
 const open = () => {
   isOpen.value = true;
   emits("visible-change", true);

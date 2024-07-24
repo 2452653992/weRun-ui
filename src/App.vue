@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, h } from "vue";
 import Button from "./components/Button/Button.vue";
 import Tooltip from "./components/Tooltip/Tooltip.vue";
 import type { TooltipInstance } from "./components/Tooltip/types";
+import Dropdown from "./components/Dropdown/Dropdown.vue";
+import type { MenuOption } from "./components/Dropdown/types";
 const TooltipRef = ref<TooltipInstance | null>(null);
 const openedValue = ref(["a"]);
 const trigger = ref<any>("click");
@@ -14,6 +16,12 @@ const open = () => {
 const close = () => {
   TooltipRef.value?.hide();
 };
+const options: MenuOption[] = [
+  { key: 1, label: h("b", "this is bold") },
+  { key: 2, label: "item2", disabled: true },
+  { key: 3, label: "item3", divided: true },
+  { key: 4, label: "item4" },
+];
 onMounted(() => {
   setTimeout(() => {
     openedValue.value.push("b");
@@ -67,30 +75,20 @@ onMounted(() => {
     <br />
     下面是toolip
     <br />
-    <Tooltip content="hellow" :trigger="trigger" placement="right">
-      <Button>right</Button>
-      <template #content>
-        <h1>hhhh</h1>
-      </template>
-    </Tooltip>
-    <Tooltip content="hellow" :trigger="trigger" placement="bottom">
+    <Dropdown
+      :trigger="trigger"
+      placement="bottom"
+      :menu-options="options"
+      @visible-change="(e) => console.log(e)"
+      @select="(e) => console.log(e)"
+      manual
+      ref="TooltipRef"
+    >
       <Button>bottom</Button>
       <template #content>
         <h1>hhhh</h1>
       </template>
-    </Tooltip>
-    <Tooltip content="hellow" :trigger="trigger" placement="top">
-      <Button>top</Button>
-      <template #content>
-        <h1>hhhh</h1>
-      </template>
-    </Tooltip>
-    <Tooltip content="hellow" :trigger="trigger" placement="left">
-      <Button>left</Button>
-      <template #content>
-        <h1>hhhh</h1>
-      </template>
-    </Tooltip>
+    </Dropdown>
   </div>
 </template>
 

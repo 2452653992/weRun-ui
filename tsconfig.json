@@ -17,6 +17,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
+    "noImplicitAny": false, // 是否在表达式和申明上有隐含的any类型时报错
 
     /* Linting */
     "strict": true,

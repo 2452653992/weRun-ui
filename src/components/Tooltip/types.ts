@@ -12,6 +12,7 @@ export interface TooltipProps {
 export interface TooltipEmits {
   (e: "visible-change", value: boolean): void;
 }
+// 实例身上的方法
 export interface TooltipInstance {
   show: () => void;
   hide: () => void;
