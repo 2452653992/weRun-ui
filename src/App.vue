@@ -25,26 +25,34 @@ const options: MenuOption[] = [
   { key: 4, label: "item4" },
 ];
 onMounted(() => {
-  createMesssage({
+  const instance = createMesssage({
     message: "hello message",
     duration: 0,
     showClose: true,
+    type: "danger",
   });
   createMesssage({
     message: "hello message again",
+    duration: 0,
     showClose: true,
+    type: "info",
   });
   createMesssage({
     message: "hello message again",
+    duration: 0,
     showClose: true,
+    type: "success",
   });
   createMesssage({
     message: "hello message again",
+    duration: 0,
     showClose: true,
+    type: "warning",
   });
   setTimeout(() => {
     openedValue.value.push("b");
     placement.value = "bottom";
+    // instance.destory();
     // trigger.value = "hover";
   }, 3000);
 });
