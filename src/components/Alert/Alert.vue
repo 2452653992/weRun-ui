@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { AlertProps } from "./type";
+import type { AlertProps } from "./types";
 import Icon from "../Icon/Icon.vue";
 // 定义组件名称和配置项
 defineOptions({

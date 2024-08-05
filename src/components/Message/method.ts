@@ -1,4 +1,4 @@
-import type { CreateMessageProps, MessageContext } from "./type";
+import type { CreateMessageProps, MessageContext } from "./types";
 import { render, h, shallowReactive } from "vue";
 import MessageConstructor from "./Message.vue";
 import useZIndex from "@/hooks/useZIndex";

@@ -31,7 +31,7 @@
 <script lang="ts" setup>
 import { computed, nextTick, onMounted, ref, watch } from "vue";
 import Icon from "../Icon/Icon.vue";
-import type { MessageProps } from "./type";
+import type { MessageProps } from "./types";
 import RenderVnode from "../Common/RenderVnode";
 import { getLastBottomOffset } from "./method";
 import useEventListener from "@/hooks/useEventListener";
