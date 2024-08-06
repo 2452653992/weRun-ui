@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import type { TooltipEmits, TooltipProps, TooltipInstance } from "./types";
-import { computed, onMounted, reactive, ref, watch } from "vue";
-import { useFloating, offset, flip, shift, arrow } from "@floating-ui/vue";
+import { computed, reactive, ref, watch } from "vue";
+import {
+  useFloating,
+  offset,
+  flip,
+  shift,
+  arrow,
+  size,
+} from "@floating-ui/vue";
 import useClickOutside from "@/hooks/useClickOutside";
 import { debounce } from "lodash-es"; // 防抖
 const props = withDefaults(defineProps<TooltipProps>(), {
@@ -96,22 +103,42 @@ watch(
     }
   }
 );
+// 获得中间件的配置项
+const getFloatingOption = () => {
+  const middlewareOption = [
+    offset(10),
+    flip(),
+    shift(),
+    arrow({ element: floatingArrow, padding: 5 }),
+  ];
+  if (props.same) {
+    middlewareOption.push(
+      size({
+        apply({ rects, elements }) {
+          Object.assign(elements.floating.style, {
+            width: `${rects.reference.width}px`,
+          });
+        },
+      })
+    );
+  }
+  return middlewareOption;
+};
 const { floatingStyles, middlewareData } = useFloating(
   triggerNode,
   popperNode,
   {
     placement: props.placement,
-    middleware: [
-      offset(10),
-      flip(),
-      shift(),
-      arrow({ element: floatingArrow, padding: 5 }),
-    ],
+    middleware: getFloatingOption(),
   }
 );
+
 useClickOutside(popperContainerNode, () => {
   if (props.trigger === "click" && isOpen.value && !props.manual) {
-    close();
+    closeFinal();
+  }
+  if (isOpen.value) {
+    emits("click-outside", true);
   }
 });
 </script>
